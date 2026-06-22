@@ -7,6 +7,8 @@ export default function App() {
     <>
       <h1>4256 Scouting</h1>
 
+      <input type="text" name="username" placeholder="Enter username">
+      
       <button
         type="button"
         className="counter"
