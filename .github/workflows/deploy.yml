@@ -25,7 +25,7 @@ jobs:
       - name: Install + Build
         run: |
           cd instinct-web
-          npm ci
+          npm install
           npm run build
 
       - uses: actions/configure-pages@v5
