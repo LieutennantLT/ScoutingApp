@@ -99,7 +99,8 @@ code,
 .counter {
   display: block;       /* Allows centering with margin */
   margin: 0 auto;       /* Centers the button horizontally */
-  padding: 15px 30px;
+  padding: 20px 60px;
+  font-size: 16px; 
   width: max-content;
   font-family: var(--mono);
   display: inline-flex;
