@@ -1,4 +1,4 @@
-name: Deploy Vite app to GitHub Pages
+name: Deploy Vite App
 
 on:
   push:
@@ -9,17 +9,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: instinct-web
 
     steps:
       - uses: actions/checkout@v4
@@ -30,8 +22,11 @@ jobs:
           cache: npm
           cache-dependency-path: instinct-web/package-lock.json
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install + Build
+        run: |
+          cd instinct-web
+          npm ci
+          npm run build
 
       - uses: actions/configure-pages@v5
 
